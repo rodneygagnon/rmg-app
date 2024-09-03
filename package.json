@@ -1,0 +1,58 @@
+{
+  "name": "rodneygagnon.com",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "eslint": "eslint src --color",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "prepare": "husky",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.632.0",
+    "@aws-sdk/lib-dynamodb": "^3.632.0",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest-dom": "^5.4.0",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-testing-library": "^6.3.0",
+    "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.2.9",
+    "postcss": "^8",
+    "prettier": "3.3.3",
+    "tailwindcss": "^3.4.1",
+    "ts-jest": "^29.2.4",
+    "typescript": "^5",
+    "typescript-eslint": "^8.2.0"
+  }
+}

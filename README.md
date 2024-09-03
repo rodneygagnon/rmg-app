@@ -36,5 +36,20 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## Docker Commands
+
 - docker build --platform=linux/amd64 --tag rodneygagnon.com .
 - docker run -p 3000:3000 --name rodneygagnon rodneygagnon.com
+
+## Terraform Commands
+
+- terraform init
+- terraform plan
+- terraform apply
+
+## AWS commands
+
+./aws/form.sh # create cloud formation (VPC, ECR, EKS)
+./aws/push.sh # build and push docker image to ECR
+./aws/deploy.sh # deploy ECR docker image to EKS cluster
+
+./aws/deform.sh # destroy cloud formation (EKS, ECR,)

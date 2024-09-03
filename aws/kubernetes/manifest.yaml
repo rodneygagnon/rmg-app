@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: PRJ-ENV-app-deployment
+  namespace: PRJ-ENV
+  labels:
+    app: PRJ-ENV-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: PRJ-dev-app
+  template:
+    metadata:
+      labels:
+        app: PRJ-ENV-app
+    spec:
+      containers:
+        - name: PRJ-ENV-app-container
+          image: ECR_IMAGE
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rmg-dev-app-deployment
+  namespace: rmg-dev
+  labels:
+    app: rmg-dev-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rmg-dev-app
+  template:
+    metadata:
+      labels:
+        app: rmg-dev-app
+    spec:
+      containers:
+        - name: rmg-dev-app-container
+          image: 011528304656.dkr.ecr.us-west-1.amazonaws.com/rmg-dev-repo
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
